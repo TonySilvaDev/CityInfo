@@ -46,6 +46,9 @@ builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOpti
 // Add dependency injection to Repository
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
+// Add automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
